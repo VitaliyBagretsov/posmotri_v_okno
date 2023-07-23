@@ -4,12 +4,14 @@
   box-sizing: border-box;
 }
 
-html {
-  block-size: 100%;
-  background-color: #fff;
+html{
+  block-size: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .page {
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
