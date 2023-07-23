@@ -1,0 +1,32 @@
+{
+  "name": "posmotri_v_okno",
+  "version": "1.0.0",
+  "description": "проект спринта №2, Посмотри в окно ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "prettier --check ./**/*.{html,css,js}",
+    "format": "prettier --write ./**/*.{html,css,js}",
+    "lint": "stylelint **/*.css",
+    "lintfix": "stylelint **/*.css --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitaliyBagretsov/posmotri_v_okno.git"
+  },
+  "keywords": [
+    "posmotri_v_okno",
+    "sprint2",
+    "yandex practicum"
+  ],
+  "author": "Yandex Practicum, Vitaliy Bagretsov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitaliyBagretsov/posmotri_v_okno/issues"
+  },
+  "homepage": "https://github.com/VitaliyBagretsov/posmotri_v_okno#readme",
+  "dependencies": {
+    "prettier": "^3.0.0",
+    "stylelint": "^15.10.2"
+  }
+}
