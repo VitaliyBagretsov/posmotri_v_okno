@@ -57,7 +57,6 @@
 .search-form__textfield{
   display: block;
   border: none;
-  border-radius: 0;
   border-block-start: solid 1px #fff;
   border-block-end: solid 1px #fff;
   color: #fff;
@@ -74,8 +73,9 @@
 
 .search-form__textfield::placeholder{
   color: rgba(255 255 255 / 0.70);
+  /* color: red; */
   font-family: "Fira Sans Condensed";
-  font-weight: 400;
+  font-weight: 700;
   font-size: 18px;
   font-style: normal;
   line-height: normal;
@@ -88,7 +88,7 @@
   gap: 10px;
 }
 
-.search-form__label:has(input[type="checkbox"]){
+.search-form__label:has(.search-form__checkbox){
   display: flex;
   align-items: center;
   gap: 5px;
