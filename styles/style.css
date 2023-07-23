@@ -47,7 +47,7 @@
 
 .search-form__fieldset-title {
   color: #fff;
-  font-family: "Fira Sans Condensed";
+  font-family: 'Fira Sans Condensed';
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
@@ -60,7 +60,7 @@
   border-block-start: solid 1px #fff;
   border-block-end: solid 1px #fff;
   color: #fff;
-  font-family: "Fira Sans Condensed";
+  font-family: 'Fira Sans Condensed';
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
@@ -73,9 +73,8 @@
 
 .search-form__textfield::placeholder{
   color: rgba(255 255 255 / 0.70);
-  /* color: red; */
-  font-family: "Fira Sans Condensed";
-  font-weight: 700;
+  font-family: 'Fira Sans Condensed';
+  font-weight: 400;
   font-size: 18px;
   font-style: normal;
   line-height: normal;
@@ -117,7 +116,7 @@
 
 .search-form__label-text {
   color: #fff;
-  font-family: "Fira Sans Condensed";
+  font-family: 'Fira Sans Condensed';
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
