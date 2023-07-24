@@ -24,7 +24,8 @@
 
 .result__video-container {
   position: relative;
-  min-inline-size: 710px;
+  max-inline-size: 711px;
+  max-block-size: 386px;
 }
 
 .result__video {
@@ -37,10 +38,10 @@
 .search-form {
   display: flex;
   justify-content: space-between;
-  gap: 39px;
+  gap: 40px;
 }
 
-.search-form__fieldset{
+.search-form__fieldset {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -49,7 +50,7 @@
   inline-size: 100%;
 }
 
-.search-form__label{
+.search-form__label {
   display: block;
   border: 1px solid #1b1919;
   padding: 1px;
@@ -64,7 +65,8 @@
   line-height: normal;
 }
 
-.search-form__textfield{
+.search-form__textfield {
+  padding: 0;
   display: block;
   border: none;
   border-block-start: solid 1px #fff;
@@ -81,8 +83,8 @@
   block-size: 27px;
 }
 
-.search-form__textfield::placeholder{
-  color: rgba(255 255 255 / 0.70);
+.search-form__textfield::placeholder {
+  color: rgba(255 255 255 / 0.7);
   font-family: 'Fira Sans Condensed';
   font-weight: 400;
   font-size: 18px;
@@ -91,19 +93,19 @@
   appearance: none;
 }
 
-.search-form__checkbox-list{
+.search-form__checkbox-list {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
-.search-form__label:has(.search-form__checkbox){
+.search-form__label:has(.search-form__checkbox) {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.search-form__pseudo-checkbox{
+.search-form__pseudo-checkbox {
   display: block;
   border: 1px solid #fff;
   cursor: pointer;
@@ -111,16 +113,19 @@
   block-size: 19px;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::after{
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
   display: block;
   margin: 1px 0 0 1px;
   background-color: #fff;
   inline-size: 15px;
   block-size: 15px;
-} 
+}
 
-.search-form__label:has(.search-form__textfield:focus-visible, .search-form__checkbox:focus-visible){
+.search-form__label:has(
+    .search-form__textfield:focus-visible,
+    .search-form__checkbox:focus-visible
+  ) {
   border-color: #fff;
 }
 
@@ -134,13 +139,13 @@
   cursor: pointer;
 }
 
-.search-form__label:hover .search-form__label-text{
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
-.button{
+.button {
   border: 1px solid #fff;
-  color: #FFF;
+  color: #fff;
   font-family: 'Fira Sans Condensed';
   font-weight: 700;
   font-size: 18px;
@@ -163,11 +168,11 @@
 .search-form__checkbox:focus,
 .search-form__checkbox:focus-visible,
 .button:focus,
-.button:focus-visible{
+.button:focus-visible {
   outline: none;
 }
 
-.button:focus-visible{
+.button:focus-visible {
   border: 3px double #fff;
 }
 
@@ -221,37 +226,47 @@
   text-decoration: none;
 }
 
-.content__card-link:focus{
+.content__card-link:focus {
   outline: none;
 }
 
-.content__card-link:focus-visible{
+.content__card-link:focus-visible {
   border: 1px solid #fff;
   outline: none;
 }
 
-.content__card-link:hover{
+.content__card-link:hover {
   color: #fff;
   text-decoration: underline;
 }
 
 .content__card-link:active,
-.content__card-link_current{
+.content__card-link_current {
   background-color: #545050;
 }
 
+/*-Дополненные после review далее правила автоматически растягивают высоту карточки в зависимости от длины текста,
+но  подготовленная раметка HTML и JS, как мне кажется, не позволяют настроить полноценное обтекание 
+изображения текстом и под текстом остаётся пустое пространство
+-Удалось создать вариант разметки и скорректировать JS(закоментированы) в результате чего 
+визуально обтекание выглядить более красиво, но осознаю, что при этом нарушается семантика - 
+заголовок <h2> переноситься с оформлением в параграф <p> в виде <span> блочного типа. 
+В получившемся варианте можно заменить <p> на <div>, а <span> на <h2> без изменения остального, но опять же, 
+есть сомнения, что и такой вариант семантически корректен 
+*/
+
 .content__video-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 103px;
+  display: flex;
+  justify-content: space-between;
   padding: 2px;
 }
 
 .content__video-card-description-container {
   color: #fff;
+  inline-size: 100%;
 }
 
-.content__video-card-title{
+.content__video-card-title {
   margin-block-end: 6px;
   font-family: Oswald;
   font-weight: 700;
@@ -259,20 +274,25 @@
   font-style: normal;
   line-height: 1;
   text-transform: uppercase;
+  /*display: block; /*свойство для альтернативного варианта article закоментированного в HTML и JS*/
 }
 
-.content__video-card-description{
+.content__video-card-description {
   font-family: 'Fira Sans Condensed';
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  line-height: .9;
+  line-height: 0.9;
+  word-break: break-all;
+  inline-size: 100%;
 }
 
 .content__video-card-thumbnail {
   display: block;
   object-fit: cover;
   object-position: center;
-  inline-size: 100%;
-  block-size: 100%;
+  min-inline-size: 194px;
+  block-size: 103px;
+  /*float: right; /*свойство для альтернативного варианта article закоментированного в HTML и JS*/
+  /*margin-left: 2px; /*свойство для альтернативного варианта article закоментированного в HTML и JS*/
 }

@@ -148,6 +148,9 @@ function appendCards({ baseUrl, dataArray, cardTmp, container }) {
     node.querySelector('.content__video-card-title').textContent = el.city;
     node.querySelector('.content__video-card-description').textContent =
       el.description;
+    // node.querySelector('.content__video-card-description').innerHTML = node
+    //   .querySelector('.content__video-card-description')
+    //   .innerHTML.replace('template-text', el.description);
     node
       .querySelector('.content__video-card-thumbnail')
       .setAttribute('src', `${baseUrl}${el.thumbnail.url}`);
